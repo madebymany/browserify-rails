@@ -18,6 +18,7 @@ module BrowserifyRails
 
         params = "-d"
         params += " -t coffeeify --extension='.coffee'" if File.directory?(COFFEEIFY_PATH)
+        params += " -t browserify-shim"
 
         stdin, stdout, stderr = Open3.popen3("#{browserify_cmd} #{params} #{pathname}")
         begin
