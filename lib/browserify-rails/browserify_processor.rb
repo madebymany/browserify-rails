@@ -45,13 +45,12 @@ module BrowserifyRails
 
     def browserify
       # Only generate source maps in development
-      if Rails.env == "development"
-        options = "-d"
-      else
-        options = ""
-      end
+      options = []
 
-      run_browserify(options)
+      options << "-d" if Rails.env == "development"
+      options << "-t browserify-shim"
+
+      run_browserify(options.join(" "))
     end
 
     def browserify_cmd
