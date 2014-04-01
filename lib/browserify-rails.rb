@@ -1,8 +1,9 @@
-require 'sprockets'
+require "sprockets"
 
-require 'browserify-rails/directive_processor'
-require 'browserify-rails/railtie'
-require 'browserify-rails/version'
+require "browserify-rails/browserify_error"
+require "browserify-rails/browserify_processor"
+require "browserify-rails/railtie"
+require "browserify-rails/version"
 
 module BrowserifyRails
 end
